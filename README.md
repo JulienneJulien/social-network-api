@@ -6,6 +6,8 @@ Built an API for a social network web application where users can share their th
 
 ## Table of Content
 
+- [social-network-api](#social-network-api)
+  - [Table of Content](#table-of-content)
   - [Description](#description)
   - [Installation](#installation)
   - [Usage](#usage)
@@ -16,7 +18,7 @@ Built an API for a social network web application where users can share their th
 
 ## Description
 
-
+TO ADD
 
 
 ## Installation
