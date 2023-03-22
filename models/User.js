@@ -11,14 +11,21 @@ const userSchema = new Schema(
           email: {
         type: String,
         required: true,
-        unique: true
+        unique: true,
+        // ADDED REQUIREMENT - Must match a valid email address (look into Mongoose's matching validation)
+        match: [
+            /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
+            "Please enter a correct email address",
+        ],
            },
+
         thoughts: [
             {
               type: Schema.Types.ObjectId,
               ref: "Thought",
             },
           ],
+
           friends: [
             {
               type: Schema.Types.ObjectId,
@@ -33,7 +40,8 @@ const userSchema = new Schema(
           id: false,
         }
       );
+
+    //   ADDED REQUIREMENT -   a virtual called friendCount that retrieves the length of the user's friends array field on query was created
       userSchema.virtual("friendCount").get(function () {
         return this.friends.length;
-
     });
