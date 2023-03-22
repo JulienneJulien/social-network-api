@@ -1,5 +1,6 @@
 const { Schema, model, Types } = require('mongoose');
 
+// USER SCHEMA ADDED
 const userSchema = new Schema(
     {
         username: {
