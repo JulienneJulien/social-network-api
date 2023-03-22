@@ -41,7 +41,12 @@ const userSchema = new Schema(
         }
       );
 
-    //   ADDED REQUIREMENT -   a virtual called friendCount that retrieves the length of the user's friends array field on query was created
+    //   ADDED REQUIREMENT - a virtual called friendCount that retrieves the length of the user's friends array field on query was created
       userSchema.virtual("friendCount").get(function () {
         return this.friends.length;
     });
+
+    // Model created
+    const User = model('User', userSchema);
+    // Model export
+    module.exports = User;
