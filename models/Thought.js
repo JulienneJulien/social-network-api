@@ -9,6 +9,13 @@ const thoughtSchema = new Schema(
         minlength: 2,
         maxlength: 279,
       },
+//ADDED REQUIREMENT - DATE & timestamp added
+    createdAt: {
+        type: Date,
+        default: Date.now,
+        get: (createdAtVal) =>
+          moment(createdAtVal).format("MMM DD, YYYY [at] hh:mm a"),
+      },
 
       username: {
         type: String,
