@@ -7,7 +7,7 @@ const thoughtSchema = new Schema(
         type: String,
         required: true,
         minlength: 2,
-        maxlength: 279,
+        maxlength: 280,
       },
 //ADDED REQUIREMENT - DATE & timestamp added
     createdAt: {
@@ -21,6 +21,25 @@ const thoughtSchema = new Schema(
         type: String,
         required: true,
       },
+      reactions: [reactionSchema],
+    },
+
+    {
+      toJSON: {
+        virtuals: true,
+        getters: true,
+      },
+      id: false,
     },
 )
-  
+
+//ADDED REQUIREMENT - a virtual called reactionCount that retrieves the length of the thought's reactions array field on query was created
+
+thoughtSchema.virtual("reactionCount").get(function () {
+    return this.reactions.length;
+  });
+
+    // Model created
+    const Thought = model('Thought', thoughtSchema);
+    // Model export
+    module.exports = Thought;
