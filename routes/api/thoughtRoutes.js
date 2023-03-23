@@ -20,3 +20,12 @@ const {
   .get(getOneThought)
   .put(updateThought)
   .delete(deleteOneThought);
+
+// ADDED REQUIREMENT - CREATE new reactions
+router.route("/:thoughtId/reactions").post(createReaction);
+
+// ADDED REQUIREMENT - DELETE a reaction
+router.route("/:thoughtId/reactions/:reactionId").delete(deleteOneReaction);
+
+
+module.exports = router;
