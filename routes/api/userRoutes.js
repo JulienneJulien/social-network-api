@@ -17,3 +17,8 @@ router.route('/:userId')
 .get(getOneUser)
 .put(updateUser)
 .delete(deleteUser);
+
+// ADDED REQUIREMENT - CREATE and DELETE a friend
+router.route('/:userId/friends/:friendId')
+.post(addFriend)
+.delete(deleteFriend);
