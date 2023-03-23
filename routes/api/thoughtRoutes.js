@@ -13,3 +13,10 @@ const {
 
   // ADDED REQUIREMENT -  GET thoughts and Posts
   router.route("/").get(getAllThoughts).post(createThought);
+
+  // ADDED REQUIREMENT -  GET one thought. Update and delete a single thought
+  router
+  .route("/:thoughtId")
+  .get(getOneThought)
+  .put(updateThought)
+  .delete(deleteOneThought);
