@@ -21,7 +21,6 @@ getOneThought(req, res) {
       )
       .catch((err) => res.status(500).json(err));
   },
-};
 
 // ADDED REQUIREMENT - Created a thought
 createThought(req, res) {
@@ -54,4 +53,26 @@ updateThought(req, res) {
   )
   .catch((err) => res.status(500).json(err));
 },
-        
+  // ADDED REQUIREMENT - deleted a single thought
+  deleteOneThought(req, res) {
+    Thought.findOneAndDelete({ _id: req.params.thoughtId })
+      .then((thought) =>
+        !thought
+          ? res
+              .status(404)
+              .json({ message: `No thought found with that ID` })
+              : User.findOneAndUpdate(
+                { thoughts: req.params.thoughtId },
+                { $pull: { thoughts: req.params.thoughtId } },
+                { new: true }
+              )
+        )
+        .then((user) =>
+            !user
+            ? res
+                .status(404)
+                .json({ message: `Deleted a thought (without User)` })
+            : res.json({ message: `Deleted a thought` })
+            )
+            .catch((err) => res.status(500).json(err));
+            },  

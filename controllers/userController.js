@@ -22,7 +22,7 @@ getOneUser(req, res) {
       )
       .catch((err) => res.status(500).json(err));
   },
-};
+
 
 // ADDED REQUIREMENT - Created a user
 createUser(req, res) {
@@ -50,3 +50,19 @@ updateUser(req, res) {
       )
       .catch((err) => res.status(500).json(err));
   }, 
+  // ADDED REQUIREMENT - deleted user along with their related thoughts
+  deleteUser(req, res) {
+    User.findOneAndDelete({ _id: req.params.userId })
+      .then((user) =>
+        !user
+          ? res
+              .status(404)
+              .json({ message: `No user found with that ID` })
+          : Thought.deleteMany({ _id: { $in: user.thoughts } })
+      )
+      .then(() =>
+        res.json({ message: `Related thoughts and the user were deleted ` })
+      )
+      .catch((err) => res.status(500).json(err));
+  },
+}; 
