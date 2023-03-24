@@ -75,4 +75,6 @@ updateThought(req, res) {
             : res.json({ message: `Deleted a thought` })
             )
             .catch((err) => res.status(500).json(err));
-            },  
+            }, 
+
+        };
