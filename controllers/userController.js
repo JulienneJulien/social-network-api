@@ -83,7 +83,7 @@ updateUser(req, res) {
       .catch((err) => res.status(500).json(err));
   },
 
- // ADDED REQUIREMENT - deletes user existing friend
+ // ADDED REQUIREMENT - deleted user existing friend
 
  deleteFriend(req, res) {
     User.findOneAndUpdate(
