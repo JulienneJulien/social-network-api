@@ -13,6 +13,6 @@ app.use(routes);
 // TO INFORM THE SERVER IS READY AND WHICH PORT BEING USED
 db.once("open", () => {
   app.listen(PORT, () => {
-    console.log(`App running via: http://localhost:${PORT}`);
+    console.log(`App running via: http://localhost:${PORT}!`);
   });
 });
