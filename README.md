@@ -50,8 +50,16 @@
 
 ***See the images and video below for demo.***
 
-ADD IMAGES/VID HERE !!!!!!!!
+https://user-images.githubusercontent.com/117052258/228126605-fe4d08da-cd14-4fae-bc8e-a3c7ff36749a.mp4
 
+
+![Insomnia get all users](https://user-images.githubusercontent.com/117052258/228126770-6802dd11-f766-4011-ab96-fda10560fd54.png)  
+
+![Insomnia get all thoughts](https://user-images.githubusercontent.com/117052258/228126742-3709952c-8f7e-44da-9fa2-f7ee98a9f5c5.png)
+
+![Screenshot 2023-03-27 235100](https://user-images.githubusercontent.com/117052258/228126807-e9b7dadf-4037-4add-97e8-005af5e4c260.png)
+
+![Screenshot 2023-03-27 235041](https://user-images.githubusercontent.com/117052258/228126846-42d350d6-6006-42f6-995e-161dbe9ff2d1.png)
 
 ## Contributing
 
