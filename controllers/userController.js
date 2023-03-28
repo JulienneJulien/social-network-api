@@ -3,8 +3,11 @@ const { User, Thought } = require("../models");
 module.exports = {
     getUsers(req, res) {
         User.find({})
-          .then((user) => res.json(user))
-          .catch((err) => res.status(500).json(err));
+        .populate("thoughts")
+        .populate("friends")
+        .select("-__v")
+        .then((user) => res.json(user))
+        .catch((err) => res.status(500).json(err));
 },
 
 // ADDED REQUIREMENT - get a single user
