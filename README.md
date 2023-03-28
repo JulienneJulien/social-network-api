@@ -1,7 +1,8 @@
 # social-network-api
 [![MIT license](https://img.shields.io/badge/license-MIT-blue.svg)](https://mit-license.org/)
 
-Built an API for a social network web application where users can share their thoughts, react to friends’ thoughts, and create a friend list. 
+*Built an API for a social network web application where users can share their thoughts, react to friends’ thoughts, and create a friend list. This application will use* ***Express***, *a* ***MongoDB database***, *and the* ***Mongoose ODM***. *This application also uses ***Moment***, a JavaScript date library for formatting timestamps.*
+
 
 
 ## Table of Content
