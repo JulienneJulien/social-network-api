@@ -1,6 +1,9 @@
 const { Schema, model, Types } = require("mongoose");
   // Model created
 
+// To format timestamp
+const moment = require("moment");
+
   //   Reaction (SCHEMA ONLY)
 const reactionSchema = new Schema(
   {
